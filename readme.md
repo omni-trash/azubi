@@ -1,5 +1,11 @@
 # Some work i did with the trainee
 
+## Iterations
+- give them a task
+- using chatGPT and internet allowed
+- talking about the result
+- deeper diving
+
 ## Startup
 
 ``Duration: 2 weeks``
@@ -12,7 +18,7 @@
 - https://www.youtube.com/watch?v=pyN7JTQM7sU&list=PLdo4fOcmZ0oXv32dOd36UydQYLejKR61R
 - showing some basics
 - lets play with ascii table
-- talk abount bits and bytes
+- talk about bits and bytes
 - talk about signed/unsigned
 - talk about floating points
 - lets create a password creator
