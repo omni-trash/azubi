@@ -23,6 +23,11 @@
             public string upper;
             public string digit;
             public string special;
+
+            public string All()
+            {
+                return lower + upper + digit + special;
+            }
         }
 
         public Spec Rule { get; set; } = PasswordRulez.DefaultRule;

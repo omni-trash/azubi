@@ -60,6 +60,17 @@
                 string password = passgen.CreatePassword();
                 Console.WriteLine($"password is: {password}");
             }
+
+            // **********************************************
+            passgen.Checker = PasswordCategory.Java;
+
+            PrintChecker("Java", passgen.Checker);
+
+            for (var i = 0; i < 10; i++)
+            {
+                string password = passgen.CreatePassword();
+                Console.WriteLine($"password is: {password}");
+            }
         }
 
         static void PrintChecker(string name, PasswordChecker checker)

@@ -23,7 +23,15 @@
             lower   = "abcdefghjkmnpqrstuvwxyz",
             upper   = "ABCDEFGHJKLMNPQRSTUVWXYZ",
             digit   = "23456789",
-            special = "=/&%$§!#"
+            special = "=/&%$!#"
+        };
+
+        public static PasswordChecker.Charset JavaCharset = new()
+        {
+            lower   = "abcdef",
+            upper   = "",
+            digit   = "0123456789",
+            special = ""
         };
 
         public static PasswordChecker.Charset DefaultCharset = AsciiCharset;

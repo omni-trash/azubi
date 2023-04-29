@@ -26,6 +26,11 @@ namespace PasswordGenerator
 
         public string CreatePassword()
         {
+            return PasswordImpl();
+        }
+
+        string PasswordImpl()
+        {
             // Maybe Rule.length is not set
             int len = Checker.Rule.RequiredLength();
 
@@ -36,22 +41,21 @@ namespace PasswordGenerator
 
             StringBuilder sb = new();
 
-            // Fill out with minimal requirements
+            // Fill with minimal requirements
             AppendRandom(sb, Checker.Chars.lower,   Checker.Rule.lower);
             AppendRandom(sb, Checker.Chars.upper,   Checker.Rule.upper);
             AppendRandom(sb, Checker.Chars.digit,   Checker.Rule.digit);
             AppendRandom(sb, Checker.Chars.special, Checker.Rule.special);
 
-            // Fill out to length
-            while (sb.Length < Checker.Rule.length)
+            // Fill to lenght
+            if (sb.Length < len)
             {
-                AppendRandom(sb, Checker.Chars.lower,   1);
-                AppendRandom(sb, Checker.Chars.upper,   1);
-                AppendRandom(sb, Checker.Chars.digit,   1);
-                AppendRandom(sb, Checker.Chars.special, 1);
+                // Better entropy
+                var allchars = Checker.Chars.All();
+                AppendRandom(sb, allchars, len - sb.Length);
             }
 
-            // Take the char array (beware min requirements are not truncated)
+            // Take the char array
             char[] chars = sb.ToString().Substring(0, len).ToCharArray();
             Shuffle(chars, 1_000);
 

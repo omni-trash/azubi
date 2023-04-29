@@ -31,5 +31,11 @@
             Rule  = PasswordRulez.Sms2FaUnsafeRule,
             Chars = PasswordChars.NumberCharset
         };
+
+        public static PasswordChecker Java = new()
+        {
+            Rule  = PasswordRulez.JavaRule,
+            Chars = PasswordChars.JavaCharset
+        };
     }
 }

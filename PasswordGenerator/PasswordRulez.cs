@@ -22,6 +22,7 @@
             unknown = 0
         };
 
+        // sure? to be discuss (entropy)
         public static PasswordChecker.Spec MegaSafeRule = new()
         {
             length  = 24,
@@ -58,6 +59,16 @@
             lower   = 0,
             upper   = 0,
             digit   = 3,
+            special = 0,
+            unknown = 0
+        };
+
+        public static PasswordChecker.Spec JavaRule = new()
+        {
+            length  = 10,
+            lower   = 0,
+            upper   = 0,
+            digit   = 0,
             special = 0,
             unknown = 0
         };
