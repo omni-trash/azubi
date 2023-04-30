@@ -47,7 +47,7 @@ namespace PasswordGenerator
             AppendRandom(sb, Checker.Chars.digit,   Checker.Rule.digit);
             AppendRandom(sb, Checker.Chars.special, Checker.Rule.special);
 
-            // Fill to lenght
+            // Fill to length
             if (sb.Length < len)
             {
                 // Better entropy

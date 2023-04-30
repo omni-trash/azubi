@@ -26,15 +26,21 @@
 
             public string All()
             {
-                return lower + upper + digit + special;
+                return string.Concat(lower, upper, digit, special);
             }
         }
 
+        /// <summary>
+        /// Rule to use
+        /// </summary>
         public Spec Rule { get; set; } = PasswordRulez.DefaultRule;
 
+        /// <summary>
+        /// Charset to use
+        /// </summary>
         public Charset Chars { get; set; } = PasswordChars.DefaultCharset;
 
-        void Validate()
+        void ValidateSelf()
         {
             bool isIncompatible = (
                 (Rule.lower   > 0 && Chars.lower.Length   == 0) ||
@@ -52,7 +58,7 @@
         // Returns true when password is ok for the rule we use
         public bool IsPasswordOk(string password)
         {
-            Validate();
+            ValidateSelf();
             return CheckSpec(GetSpec(password));
         }
 
