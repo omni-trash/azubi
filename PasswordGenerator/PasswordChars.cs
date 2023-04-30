@@ -7,7 +7,7 @@
             lower   = "abcdefghijklmnopqrstuvwxyz",
             upper   = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
             digit   = "0123456789",
-            special = "?=/&%$§!#"
+            special = "?=/&%$!#"
         };
 
         public static PasswordChecker.Charset NumberCharset = new()
